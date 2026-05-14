@@ -1,2 +1,90 @@
-<h1>CommunityBasedSearchEngine</h1>
-<p>What do 360 <em>users</em> have to offer?</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>360 Search</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0d0f12;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .search-box {
+      width: 500px;
+      max-width: 90%;
+      display: flex;
+      gap: 10px;
+    }
+
+    input {
+      flex: 1;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 14px 20px;
+      border-radius: 10px;
+      border: none;
+      background: #4f8cff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #results {
+      margin-top: 40px;
+      width: 600px;
+      max-width: 90%;
+    }
+
+    .result-item {
+      background: rgba(255,255,255,0.05);
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>360 Search</h1>
+
+  <div class="search-box">
+    <input id="query" type="text" placeholder="Search the web...">
+    <button onclick="search()">Go</button>
+  </div>
+
+  <div id="results"></div>
+
+  <script>
+    function search() {
+      const q = document.getElementById('query').value;
+      const results = document.getElementById('results');
+
+      results.innerHTML = `
+        <div class="result-item">
+          <strong>Fake result for:</strong> ${q}
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
